@@ -1,10 +1,10 @@
-name: Release
+name: Docfx V3 Release
 on:
   push:
     branches: [ v3-release, release-action ]
 jobs:
   build:
-    name: Build and Test
+    name: Release
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
@@ -15,8 +15,6 @@ jobs:
       shell: pwsh
       run: ./build.ps1
       id: build-binaries
-    - name: Test
-      run: dotnet test -c Release
     - name: Create GtiHub release
       uses: marvinpinto/action-automatic-releases@latest
       with:
