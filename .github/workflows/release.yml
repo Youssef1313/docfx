@@ -1,7 +1,7 @@
 name: Release
 on:
   push:
-    branches: [ v3-release ]
+    branches: [ v3-release, release-action ]
 jobs:
   build:
     name: Build and Test
